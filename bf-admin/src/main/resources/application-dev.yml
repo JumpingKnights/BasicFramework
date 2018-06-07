@@ -1,0 +1,26 @@
+spring:
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/bf?autoReconnect=true&useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false
+    username: root
+    password: root
+    db-name: bf
+    filters: log4j,wall,mergeStat
+
+#flowable数据源和多数据源配置
+bf:
+  flowable:
+    datasource:
+      url: jdbc:mysql://127.0.0.1:3306/bf_flowable?autoReconnect=true&useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false
+      username: root
+      password: root
+  muti-datasource:
+    default-dataSource-name: dataSourceGuns #默认的数据源名称
+    url: jdbc:mysql://127.0.0.1:3306/bf_flowable?autoReconnect=true&useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false
+    username: root
+    password: root
+
+logging:
+  level.root: info
+  level.com.bf: debug
+  path: logs/
+  file: fb.log
